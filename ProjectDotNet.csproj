@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8902EA74-676F-4E37-A9F3-04E04A90AE56}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectDotNet</RootNamespace>
+    <AssemblyName>ProjectDotNet</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44365</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.27\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAO\Connect.cs" />
+    <Compile Include="DAO\Services.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LaptopInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\about.css" />
+    <Content Include="Content\admin.css" />
+    <Content Include="Content\cart.css" />
+    <Content Include="Content\cartResponsive.css" />
+    <Content Include="Content\reponsiveProduct.css" />
+    <Content Include="Content\responsiveIndex.css" />
+    <Content Include="Content\style-product.css" />
+    <Content Include="Content\style-tutorial.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="image\acer\aspire-3-black\1.png" />
+    <Content Include="image\acer\aspire-3-black\2.png" />
+    <Content Include="image\acer\aspire-3-black\3.png" />
+    <Content Include="image\acer\aspire-3-black\4.png" />
+    <Content Include="image\acer\aspire-3-black\5.png" />
+    <Content Include="image\acer\aspire-3-black\6.png" />
+    <Content Include="image\acer\aspire-3-silver\1.png" />
+    <Content Include="image\acer\aspire-3-silver\2.png" />
+    <Content Include="image\acer\aspire-3-silver\3.png" />
+    <Content Include="image\acer\aspire-3-silver\4.png" />
+    <Content Include="image\acer\aspire-3-silver\5.png" />
+    <Content Include="image\acer\aspire-5-black\1.png" />
+    <Content Include="image\acer\aspire-5-black\2.png" />
+    <Content Include="image\acer\aspire-5-black\3.png" />
+    <Content Include="image\acer\aspire-5-black\4.png" />
+    <Content Include="image\acer\aspire-5-black\5.png" />
+    <Content Include="image\acer\aspire-5-silver\1.png" />
+    <Content Include="image\acer\aspire-5-silver\2.png" />
+    <Content Include="image\acer\aspire-5-silver\3.png" />
+    <Content Include="image\acer\aspire-5-silver\4.png" />
+    <Content Include="image\acer\aspire-5-silver\5.png" />
+    <Content Include="image\acer\aspire-7-black\1.png" />
+    <Content Include="image\acer\aspire-7-black\2.png" />
+    <Content Include="image\acer\aspire-7-black\3.png" />
+    <Content Include="image\acer\aspire-7-black\4.png" />
+    <Content Include="image\acer\aspire-7-black\5.png" />
+    <Content Include="image\acer\aspire-7-black\6.png" />
+    <Content Include="image\acer\nitro-5-eagle\1.png" />
+    <Content Include="image\acer\nitro-5-eagle\2.png" />
+    <Content Include="image\acer\nitro-5-eagle\3.png" />
+    <Content Include="image\acer\nitro-5-eagle\4.png" />
+    <Content Include="image\acer\nitro-5-eagle\5.png" />
+    <Content Include="image\acer\nitro-5-eagle\6.png" />
+    <Content Include="image\acer\nitro-5-eagle\7.png" />
+    <Content Include="image\acer\nitro-5\1.png" />
+    <Content Include="image\acer\nitro-5\2.png" />
+    <Content Include="image\acer\nitro-5\3.png" />
+    <Content Include="image\acer\nitro-5\4.png" />
+    <Content Include="image\acer\nitro-5\5.png" />
+    <Content Include="image\acer\nitro-5\6.png" />
+    <Content Include="image\acer\nitro-5\7.png" />
+    <Content Include="image\acer\predator-helios\1.png" />
+    <Content Include="image\acer\predator-helios\2.png" />
+    <Content Include="image\acer\predator-helios\3.png" />
+    <Content Include="image\acer\predator-helios\4.png" />
+    <Content Include="image\acer\predator-helios\5.png" />
+    <Content Include="image\acer\spin-3\1.png" />
+    <Content Include="image\acer\spin-3\2.png" />
+    <Content Include="image\acer\spin-3\3.png" />
+    <Content Include="image\acer\spin-3\4.png" />
+    <Content Include="image\acer\spin-3\5.png" />
+    <Content Include="image\acer\swift-3-gold\1.png" />
+    <Content Include="image\acer\swift-3-gold\2.png" />
+    <Content Include="image\acer\swift-3-gold\3.png" />
+    <Content Include="image\acer\swift-3-gold\4.png" />
+    <Content Include="image\acer\swift-3-gold\5.png" />
+    <Content Include="image\acer\swift-3-gold\6.png" />
+    <Content Include="image\acer\swift-3-silver\1.png" />
+    <Content Include="image\acer\swift-3-silver\2.png" />
+    <Content Include="image\acer\swift-3-silver\3.png" />
+    <Content Include="image\acer\swift-3-silver\4.png" />
+    <Content Include="image\acer\swift-3-silver\5.png" />
+    <Content Include="image\acer\swift-3\1.png" />
+    <Content Include="image\acer\swift-3\2.png" />
+    <Content Include="image\acer\swift-3\3.png" />
+    <Content Include="image\acer\swift-3\4.png" />
+    <Content Include="image\acer\swift-3\5.png" />
+    <Content Include="image\acer\swift-3\6.png" />
+    <Content Include="image\acer\swift-3\7.png" />
+    <Content Include="image\acer\swift-3\8.png" />
+    <Content Include="image\acer\travelmate-p2\1.png" />
+    <Content Include="image\acer\travelmate-p2\2.png" />
+    <Content Include="image\acer\travelmate-p2\3.png" />
+    <Content Include="image\acer\travelmate-p2\4.png" />
+    <Content Include="image\acer\travelmate-p2\5.png" />
+    <Content Include="image\all-product\unnamed.jpg" />
+    <Content Include="image\asus-logo.png" />
+    <Content Include="image\asuss\asuss %2810%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2810%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2810%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2810%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2810%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2811%29\unnamed %2810%29.png" />
+    <Content Include="image\asuss\asuss %2811%29\unnamed %2811%29.png" />
+    <Content Include="image\asuss\asuss %2811%29\unnamed %2812%29.png" />
+    <Content Include="image\asuss\asuss %2811%29\unnamed %2813%29.png" />
+    <Content Include="image\asuss\asuss %2811%29\unnamed %2814%29.png" />
+    <Content Include="image\asuss\asuss %2812%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2812%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2812%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2812%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2812%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %2813%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2813%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2813%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2813%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2813%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %2814%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2814%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2814%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2814%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2814%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2815%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2815%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2815%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2815%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2815%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %2816%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2816%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2816%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2816%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2816%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %2817%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2817%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2817%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2817%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2817%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %2818%29\unnam4ed.png" />
+    <Content Include="image\asuss\asuss %2818%29\unname3d.png" />
+    <Content Include="image\asuss\asuss %2818%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2818%29\unnamed1.png" />
+    <Content Include="image\asuss\asuss %2818%29\unnamed2.png" />
+    <Content Include="image\asuss\asuss %2819%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2819%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2819%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2819%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2819%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %282%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %282%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %282%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %282%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %282%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2820%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2820%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2820%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2820%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2820%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2821%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2821%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2821%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2821%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2821%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %2822%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2822%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2822%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2822%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2822%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %2823%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2823%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2823%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2823%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2823%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2824%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2824%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2824%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2824%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2824%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2825%29\unnamed %2815%29.png" />
+    <Content Include="image\asuss\asuss %2825%29\unnamed %2816%29.png" />
+    <Content Include="image\asuss\asuss %2825%29\unnamed %2817%29.png" />
+    <Content Include="image\asuss\asuss %2825%29\unnamed %2818%29.png" />
+    <Content Include="image\asuss\asuss %2825%29\unnamed %2819%29.png" />
+    <Content Include="image\asuss\asuss %2826%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %2826%29\unnamed %286%29.png" />
+    <Content Include="image\asuss\asuss %2826%29\unnamed %287%29.png" />
+    <Content Include="image\asuss\asuss %2826%29\unnamed %288%29.png" />
+    <Content Include="image\asuss\asuss %2826%29\unnamed %289%29.png" />
+    <Content Include="image\asuss\asuss %2827%29\unnamed %2810%29.png" />
+    <Content Include="image\asuss\asuss %2827%29\unnamed %286%29.png" />
+    <Content Include="image\asuss\asuss %2827%29\unnamed %287%29.png" />
+    <Content Include="image\asuss\asuss %2827%29\unnamed %288%29.png" />
+    <Content Include="image\asuss\asuss %2827%29\unnamed %289%29.png" />
+    <Content Include="image\asuss\asuss %2828%29\unnam4ed.png" />
+    <Content Include="image\asuss\asuss %2828%29\unname3d.png" />
+    <Content Include="image\asuss\asuss %2828%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2828%29\unnamed1.png" />
+    <Content Include="image\asuss\asuss %2828%29\unnamed2.png" />
+    <Content Include="image\asuss\asuss %2829%29\unnamed %2810%29.png" />
+    <Content Include="image\asuss\asuss %2829%29\unnamed %2811%29.png" />
+    <Content Include="image\asuss\asuss %2829%29\unnamed %2812%29.png" />
+    <Content Include="image\asuss\asuss %2829%29\unnamed %2813%29.png" />
+    <Content Include="image\asuss\asuss %2829%29\unnamed %2814%29.png" />
+    <Content Include="image\asuss\asuss %283%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %283%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %283%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %283%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %283%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2830%29\unnam4ed.png" />
+    <Content Include="image\asuss\asuss %2830%29\unname3d.png" />
+    <Content Include="image\asuss\asuss %2830%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2830%29\unnamed1.png" />
+    <Content Include="image\asuss\asuss %2830%29\unnamed2.png" />
+    <Content Include="image\asuss\asuss %2831%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2831%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2831%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2831%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2831%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2832%29\unnamed %2810%29.png" />
+    <Content Include="image\asuss\asuss %2832%29\unnamed %2811%29.png" />
+    <Content Include="image\asuss\asuss %2832%29\unnamed %2812%29.png" />
+    <Content Include="image\asuss\asuss %2832%29\unnamed %2813%29.png" />
+    <Content Include="image\asuss\asuss %2832%29\unnamed %2814%29.png" />
+    <Content Include="image\asuss\asuss %2833%29\unnamed %2810%29.png" />
+    <Content Include="image\asuss\asuss %2833%29\unnamed %2811%29.png" />
+    <Content Include="image\asuss\asuss %2833%29\unnamed %2812%29.png" />
+    <Content Include="image\asuss\asuss %2833%29\unnamed %2813%29.png" />
+    <Content Include="image\asuss\asuss %2833%29\unnamed %2814%29.png" />
+    <Content Include="image\asuss\asuss %2834%29\unnamed %2811%29.png" />
+    <Content Include="image\asuss\asuss %2834%29\unnamed %2812%29.png" />
+    <Content Include="image\asuss\asuss %2834%29\unnamed %2813%29.png" />
+    <Content Include="image\asuss\asuss %2834%29\unnamed %2814%29.png" />
+    <Content Include="image\asuss\asuss %2834%29\unnamed %2815%29.png" />
+    <Content Include="image\asuss\asuss %2835%29\unnamed %2811%29.png" />
+    <Content Include="image\asuss\asuss %2835%29\unnamed %2812%29.png" />
+    <Content Include="image\asuss\asuss %2835%29\unnamed %2813%29.png" />
+    <Content Include="image\asuss\asuss %2835%29\unnamed %2814%29.png" />
+    <Content Include="image\asuss\asuss %2835%29\unnamed %2815%29.png" />
+    <Content Include="image\asuss\asuss %2836%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2836%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2836%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2836%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2836%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2837%29\unnamed %2816%29.png" />
+    <Content Include="image\asuss\asuss %2837%29\unnamed %2817%29.png" />
+    <Content Include="image\asuss\asuss %2837%29\unnamed %2818%29.png" />
+    <Content Include="image\asuss\asuss %2837%29\unnamed %2819%29.png" />
+    <Content Include="image\asuss\asuss %2837%29\unnamed.png" />
+    <Content Include="image\asuss\asuss %2838%29\unnamed %2815%29.png" />
+    <Content Include="image\asuss\asuss %2838%29\unnamed %2816%29.png" />
+    <Content Include="image\asuss\asuss %2838%29\unnamed %2817%29.png" />
+    <Content Include="image\asuss\asuss %2838%29\unnamed %2818%29.png" />
+    <Content Include="image\asuss\asuss %2838%29\unnamed %2819%29.png" />
+    <Content Include="image\asuss\asuss %2839%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2839%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2839%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2839%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2839%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %284%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %284%29\unnamed %286%29.png" />
+    <Content Include="image\asuss\asuss %284%29\unnamed %287%29.png" />
+    <Content Include="image\asuss\asuss %284%29\unnamed %288%29.png" />
+    <Content Include="image\asuss\asuss %284%29\unnamed %289%29.png" />
+    <Content Include="image\asuss\asuss %2840%29\unnamed %281%29.png" />
+    <Content Include="image\asuss\asuss %2840%29\unnamed %282%29.png" />
+    <Content Include="image\asuss\asuss %2840%29\unnamed %283%29.png" />
+    <Content Include="image\asuss\asuss %2840%29\unnamed %284%29.png" />
+    <Content Include="image\asuss\asuss %2840%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %285%29\unnamed %285%29.png" />
+    <Content Include="image\asuss\asuss %285%29\unnamed %286%29.png" />
+    <Content Include="image\asuss\asuss %285%29\unnamed %287%29.png" />
+    <Content Include="image\asuss\asuss %285%29\unnamed %288%29.png" />
+    <Content Include="image\asuss\asuss %285%29\unnamed %289%29.png" />
+    <Content Include="image\asuss\asuss %286%29\unnamed %2810%29.png" />
+    <Content Include="image\asuss\asuss %286%29\unnamed %2811%29.png" />
+    <Content Include="image\asuss\asuss %286%29\unnamed %2812%29.png" />
+    <Content Include="image\asuss\asuss %286%29\unnamed %2813%29.png" />
+    <Content Include="image\asuss\asuss %286%29\unnamed %2814%29.png" />
+    <Content Include="image\asuss\asuss %287%29\unnamed %2815%29.png" />
+    <Content Include="image\asuss\asuss %287%29\unnamed %2816%29.png" />
+    <Content Include="image\asuss\asuss %287%29\unnamed %2817%29.png" />
+    <Content Include="image\asuss\asuss %287%29\unnamed %2818%29.png" />
+    <Content Include="image\asuss\asuss %287%29\unnamed %2819%29.png" />
+    <Content Include="image\asuss\asuss %288%29\unnamed %2820%29.png" />
+    <Content Include="image\asuss\asuss %288%29\unnamed %2821%29.png" />
+    <Content Include="image\asuss\asuss %288%29\unnamed %2822%29.png" />
+    <Content Include="image\asuss\asuss %288%29\unnamed %2823%29.png" />
+    <Content Include="image\asuss\asuss %288%29\unnamed %2824%29.png" />
+    <Content Include="image\asuss\asuss %289%29\unnamed %2825%29.png" />
+    <Content Include="image\asuss\asuss %289%29\unnamed %2826%29.png" />
+    <Content Include="image\asuss\asuss %289%29\unnamed %2827%29.png" />
+    <Content Include="image\asuss\asuss %289%29\unnamed %2828%29.png" />
+    <Content Include="image\asuss\asuss %289%29\unnamed %2829%29.png" />
+    <Content Include="image\asuss\asuss\unnam4ed.png" />
+    <Content Include="image\asuss\asuss\unname3d.png" />
+    <Content Include="image\asuss\asuss\unnamed.png" />
+    <Content Include="image\asuss\asuss\unnamed1.png" />
+    <Content Include="image\asuss\asuss\unnamed2.png" />
+    <Content Include="image\dell\dell10\dell1.png" />
+    <Content Include="image\dell\dell10\dell2.png" />
+    <Content Include="image\dell\dell10\dell3.png" />
+    <Content Include="image\dell\dell10\dell4.png" />
+    <Content Include="image\dell\dell10\dell5.png" />
+    <Content Include="image\dell\dell11\dell1.png" />
+    <Content Include="image\dell\dell11\dell2.png" />
+    <Content Include="image\dell\dell11\dell3.png" />
+    <Content Include="image\dell\dell11\dell4.png" />
+    <Content Include="image\dell\dell11\dell5.png" />
+    <Content Include="image\dell\dell12\dell1.png" />
+    <Content Include="image\dell\dell12\dell2.png" />
+    <Content Include="image\dell\dell12\dell3.png" />
+    <Content Include="image\dell\dell12\dell4.png" />
+    <Content Include="image\dell\dell12\dell5.png" />
+    <Content Include="image\dell\dell13\dell1.png" />
+    <Content Include="image\dell\dell13\dell2.png" />
+    <Content Include="image\dell\dell13\dell3.png" />
+    <Content Include="image\dell\dell13\dell4.png" />
+    <Content Include="image\dell\dell13\dell5.png" />
+    <Content Include="image\dell\dell14\dell1.png" />
+    <Content Include="image\dell\dell14\dell2.png" />
+    <Content Include="image\dell\dell14\dell3.png" />
+    <Content Include="image\dell\dell14\dell4.png" />
+    <Content Include="image\dell\dell15\dell1.png" />
+    <Content Include="image\dell\dell15\dell2.png" />
+    <Content Include="image\dell\dell15\dell3.png" />
+    <Content Include="image\dell\dell15\dell4.png" />
+    <Content Include="image\dell\dell15\dell5.png" />
+    <Content Include="image\dell\dell16\dell1.png" />
+    <Content Include="image\dell\dell16\dell2.png" />
+    <Content Include="image\dell\dell16\dell3.png" />
+    <Content Include="image\dell\dell16\dell4.png" />
+    <Content Include="image\dell\dell17\dell1.png" />
+    <Content Include="image\dell\dell17\dell2.png" />
+    <Content Include="image\dell\dell17\dell3.png" />
+    <Content Include="image\dell\dell18\dell1.png" />
+    <Content Include="image\dell\dell18\dell2.png" />
+    <Content Include="image\dell\dell18\dell3.png" />
+    <Content Include="image\dell\dell18\dell4.png" />
+    <Content Include="image\dell\dell18\dell5.png" />
+    <Content Include="image\dell\dell19\dell1.png" />
+    <Content Include="image\dell\dell19\dell2.png" />
+    <Content Include="image\dell\dell19\dell3.png" />
+    <Content Include="image\dell\dell19\dell4.png" />
+    <Content Include="image\dell\dell19\dell5.png" />
+    <Content Include="image\dell\dell1\dell1.png" />
+    <Content Include="image\dell\dell1\dell2.png" />
+    <Content Include="image\dell\dell1\dell3.png" />
+    <Content Include="image\dell\dell1\dell4.png" />
+    <Content Include="image\dell\dell1\dell5.png" />
+    <Content Include="image\dell\dell1\dell6.png" />
+    <Content Include="image\dell\dell20\dell1.png" />
+    <Content Include="image\dell\dell20\dell2.png" />
+    <Content Include="image\dell\dell20\dell3.png" />
+    <Content Include="image\dell\dell20\dell4.png" />
+    <Content Include="image\dell\dell20\dell5.png" />
+    <Content Include="image\dell\dell21\dell1.png" />
+    <Content Include="image\dell\dell21\dell2.png" />
+    <Content Include="image\dell\dell21\dell3.png" />
+    <Content Include="image\dell\dell21\dell4.png" />
+    <Content Include="image\dell\dell21\dell5.png" />
+    <Content Include="image\dell\dell22\dell1.png" />
+    <Content Include="image\dell\dell22\dell2.png" />
+    <Content Include="image\dell\dell22\dell3.png" />
+    <Content Include="image\dell\dell22\dell4.png" />
+    <Content Include="image\dell\dell22\dell5.png" />
+    <Content Include="image\dell\dell23\dell1.png" />
+    <Content Include="image\dell\dell23\dell2.png" />
+    <Content Include="image\dell\dell23\dell3.png" />
+    <Content Include="image\dell\dell23\dell4.png" />
+    <Content Include="image\dell\dell23\dell5.png" />
+    <Content Include="image\dell\dell24\dell1.png" />
+    <Content Include="image\dell\dell24\dell2.png" />
+    <Content Include="image\dell\dell24\dell3.png" />
+    <Content Include="image\dell\dell24\dell4.png" />
+    <Content Include="image\dell\dell25\dell1.png" />
+    <Content Include="image\dell\dell25\dell2.png" />
+    <Content Include="image\dell\dell25\dell3.png" />
+    <Content Include="image\dell\dell25\dell4.png" />
+    <Content Include="image\dell\dell2\dell1.png" />
+    <Content Include="image\dell\dell2\dell2.png" />
+    <Content Include="image\dell\dell2\dell3.png" />
+    <Content Include="image\dell\dell2\dell4.png" />
+    <Content Include="image\dell\dell2\dell5.png" />
+    <Content Include="image\dell\dell2\dell6.png" />
+    <Content Include="image\dell\dell3\dell1.png" />
+    <Content Include="image\dell\dell3\dell2.png" />
+    <Content Include="image\dell\dell3\dell3.png" />
+    <Content Include="image\dell\dell3\dell4.png" />
+    <Content Include="image\dell\dell3\dell5.png" />
+    <Content Include="image\dell\dell3\dell6.png" />
+    <Content Include="image\dell\dell4\dell1.png" />
+    <Content Include="image\dell\dell4\dell2.png" />
+    <Content Include="image\dell\dell4\dell3.png" />
+    <Content Include="image\dell\dell4\dell4.png" />
+    <Content Include="image\dell\dell4\dell5.png" />
+    <Content Include="image\dell\dell4\dell6.png" />
+    <Content Include="image\dell\dell5\dell1.png" />
+    <Content Include="image\dell\dell5\dell2.png" />
+    <Content Include="image\dell\dell5\dell3.png" />
+    <Content Include="image\dell\dell5\dell4.png" />
+    <Content Include="image\dell\dell5\dell5.png" />
+    <Content Include="image\dell\dell6\dell1.png" />
+    <Content Include="image\dell\dell6\dell2.png" />
+    <Content Include="image\dell\dell6\dell3.png" />
+    <Content Include="image\dell\dell6\dell4.png" />
+    <Content Include="image\dell\dell6\dell5.png" />
+    <Content Include="image\dell\dell7\dell1.png" />
+    <Content Include="image\dell\dell7\dell2.png" />
+    <Content Include="image\dell\dell7\dell3.png" />
+    <Content Include="image\dell\dell7\dell4.png" />
+    <Content Include="image\dell\dell7\dell5.png" />
+    <Content Include="image\dell\dell8\dell1.png" />
+    <Content Include="image\dell\dell8\dell2.png" />
+    <Content Include="image\dell\dell8\dell3.png" />
+    <Content Include="image\dell\dell8\dell4.png" />
+    <Content Include="image\dell\dell8\dell5.png" />
+    <Content Include="image\dell\dell9\dell1.png" />
+    <Content Include="image\dell\dell9\dell2.png" />
+    <Content Include="image\dell\dell9\dell3.png" />
+    <Content Include="image\dell\dell9\dell4.png" />
+    <Content Include="image\dell\dell9\dell5.png" />
+    <Content Include="image\giga\giga 1\unnamed %285%29.png" />
+    <Content Include="image\giga\giga 1\unnamed %286%29.png" />
+    <Content Include="image\giga\giga 1\unnamed %287%29.png" />
+    <Content Include="image\giga\giga 1\unnamed %288%29.png" />
+    <Content Include="image\giga\giga 1\unnamed %289%29.png" />
+    <Content Include="image\giga\giga 2\unnamed %285%29.png" />
+    <Content Include="image\giga\giga 2\unnamed %286%29.png" />
+    <Content Include="image\giga\giga 2\unnamed %287%29.png" />
+    <Content Include="image\giga\giga 2\unnamed %288%29.png" />
+    <Content Include="image\giga\giga 2\unnamed %289%29.png" />
+    <Content Include="image\giga\giga 3\unnamed %285%29.png" />
+    <Content Include="image\giga\giga 3\unnamed %286%29.png" />
+    <Content Include="image\giga\giga 3\unnamed %287%29.png" />
+    <Content Include="image\giga\giga 3\unnamed %288%29.png" />
+    <Content Include="image\giga\giga 3\unnamed %289%29.png" />
+    <Content Include="image\giga\giga 4\unnamed %285%29.png" />
+    <Content Include="image\giga\giga 4\unnamed %286%29.png" />
+    <Content Include="image\giga\giga 4\unnamed %287%29.png" />
+    <Content Include="image\giga\giga 4\unnamed %288%29.png" />
+    <Content Include="image\giga\giga 4\unnamed %289%29.png" />
+    <Content Include="image\giga\giga 5\unnamed %285%29.png" />
+    <Content Include="image\giga\giga 5\unnamed %286%29.png" />
+    <Content Include="image\giga\giga 5\unnamed %287%29.png" />
+    <Content Include="image\giga\giga 5\unnamed %288%29.png" />
+    <Content Include="image\giga\giga 5\unnamed %289%29.png" />
+    <Content Include="image\giga\giga 6\unnamed %285%29.png" />
+    <Content Include="image\giga\giga 6\unnamed %286%29.png" />
+    <Content Include="image\giga\giga 6\unnamed %287%29.png" />
+    <Content Include="image\giga\giga 6\unnamed %288%29.png" />
+    <Content Include="image\giga\giga 6\unnamed %289%29.png" />
+    <Content Include="image\giga\giga 7\unnamed %285%29.png" />
+    <Content Include="image\giga\giga 7\unnamed %286%29.png" />
+    <Content Include="image\giga\giga 7\unnamed %287%29.png" />
+    <Content Include="image\giga\giga 7\unnamed %288%29.png" />
+    <Content Include="image\giga\giga 7\unnamed %289%29.png" />
+    <Content Include="image\giga\giga\unnamed %285%29.png" />
+    <Content Include="image\giga\giga\unnamed %286%29.png" />
+    <Content Include="image\giga\giga\unnamed %287%29.png" />
+    <Content Include="image\giga\giga\unnamed %288%29.png" />
+    <Content Include="image\giga\giga\unnamed %289%29.png" />
+    <Content Include="image\hp\elitebook-x360\1.png" />
+    <Content Include="image\hp\elitebook-x360\2.png" />
+    <Content Include="image\hp\elitebook-x360\3.png" />
+    <Content Include="image\hp\elitebook-x360\4.png" />
+    <Content Include="image\hp\elitebook-x360\5.png" />
+    <Content Include="image\hp\elitebook-x360\6.png" />
+    <Content Include="image\hp\elitebook\1.png" />
+    <Content Include="image\hp\elitebook\2.png" />
+    <Content Include="image\hp\elitebook\3.png" />
+    <Content Include="image\hp\elitebook\4.png" />
+    <Content Include="image\hp\elitebook\5.png" />
+    <Content Include="image\hp\envy-13\1.png" />
+    <Content Include="image\hp\envy-13\2.png" />
+    <Content Include="image\hp\envy-13\3.png" />
+    <Content Include="image\hp\envy-13\4.png" />
+    <Content Include="image\hp\envy-13\5.png" />
+    <Content Include="image\hp\omen-15\1.png" />
+    <Content Include="image\hp\omen-15\2.png" />
+    <Content Include="image\hp\omen-15\3.png" />
+    <Content Include="image\hp\omen-15\4.png" />
+    <Content Include="image\hp\omen-15\5.png" />
+    <Content Include="image\hp\omen-16\1.png" />
+    <Content Include="image\hp\omen-16\2.png" />
+    <Content Include="image\hp\omen-16\3.png" />
+    <Content Include="image\hp\omen-16\4.png" />
+    <Content Include="image\hp\pavilion-gaming\1.png" />
+    <Content Include="image\hp\pavilion-gaming\2.png" />
+    <Content Include="image\hp\pavilion-gaming\3.png" />
+    <Content Include="image\hp\pavilion-gaming\4.png" />
+    <Content Include="image\hp\pavilion-gaming\5.png" />
+    <Content Include="image\hp\pavilion\1.png" />
+    <Content Include="image\hp\pavilion\2.png" />
+    <Content Include="image\hp\pavilion\3.png" />
+    <Content Include="image\hp\pavilion\4.png" />
+    <Content Include="image\hp\pavilion\5.png" />
+    <Content Include="image\hp\pavilion\6.png" />
+    <Content Include="image\hp\probook-240\1.png" />
+    <Content Include="image\hp\probook-240\2.png" />
+    <Content Include="image\hp\probook-240\3.png" />
+    <Content Include="image\hp\probook-240\4.png" />
+    <Content Include="image\hp\probook-240\5.png" />
+    <Content Include="image\hp\probook-480\1.png" />
+    <Content Include="image\hp\probook-480\2.png" />
+    <Content Include="image\hp\probook-480\3.png" />
+    <Content Include="image\hp\probook-480\4.png" />
+    <Content Include="image\hp\probook-480\5.png" />
+    <Content Include="image\hp\victus\1.png" />
+    <Content Include="image\hp\victus\2.png" />
+    <Content Include="image\hp\victus\3.png" />
+    <Content Include="image\hp\victus\4.png" />
+    <Content Include="image\icon-product\baotri.png" />
+    <Content Include="image\icon-product\camket.png" />
+    <Content Include="image\icon-product\doitra.png" />
+    <Content Include="image\icon-product\free-ship.png" />
+    <Content Include="image\icon-product\ship.png" />
+    <Content Include="image\icon-product\suachua.png" />
+    <Content Include="image\image99.png" />
+    <Content Include="image\img_11.png" />
+    <Content Include="image\img_2.png" />
+    <Content Include="image\img_3.png" />
+    <Content Include="image\img_4.png" />
+    <Content Include="image\img_5.png" />
+    <Content Include="image\img_6.png" />
+    <Content Include="image\img_7.png" />
+    <Content Include="image\img_8.png" />
+    <Content Include="image\logo lap\acer.png" />
+    <Content Include="image\logo lap\asus.png" />
+    <Content Include="image\logo lap\dell.png" />
+    <Content Include="image\logo lap\gigabyte.png" />
+    <Content Include="image\logo lap\hp.png" />
+    <Content Include="image\logo lap\microsoft.png" />
+    <Content Include="image\logo lap\msi.png" />
+    <Content Include="image\logo-laptop\acer.png" />
+    <Content Include="image\logo-laptop\asus.png" />
+    <Content Include="image\logo-laptop\dell.png" />
+    <Content Include="image\logo-laptop\gigabyte.png" />
+    <Content Include="image\logo-laptop\hp.png" />
+    <Content Include="image\logo-laptop\microsoft.png" />
+    <Content Include="image\logo-laptop\msi.png" />
+    <Content Include="image\logo-re.png" />
+    <Content Include="image\logo.png" />
+    <Content Include="image\man-hinh-asus.jpg" />
+    <Content Include="image\member\locngu.jpg" />
+    <Content Include="image\member\minhquan.jpg" />
+    <Content Include="image\member\quocthinh.jpg" />
+    <Content Include="image\member\tanloc.jpg" />
+    <Content Include="image\micro\micro 1\unnamed %281%29.png" />
+    <Content Include="image\micro\micro 1\unnamed %282%29.png" />
+    <Content Include="image\micro\micro 1\unnamed %283%29.png" />
+    <Content Include="image\micro\micro 1\unnamed %284%29.png" />
+    <Content Include="image\micro\micro 1\unnamed.png" />
+    <Content Include="image\micro\micro\unnamed %281%29.png" />
+    <Content Include="image\micro\micro\unnamed %282%29.png" />
+    <Content Include="image\micro\micro\unnamed %283%29.png" />
+    <Content Include="image\micro\micro\unnamed %284%29.png" />
+    <Content Include="image\micro\micro\unnamed.png" />
+    <Content Include="image\msi\msi10\msi1.png" />
+    <Content Include="image\msi\msi10\msi2.png" />
+    <Content Include="image\msi\msi10\msi3.png" />
+    <Content Include="image\msi\msi10\msi4.png" />
+    <Content Include="image\msi\msi11\msi1.png" />
+    <Content Include="image\msi\msi11\msi2.png" />
+    <Content Include="image\msi\msi11\msi3.png" />
+    <Content Include="image\msi\msi11\msi4.png" />
+    <Content Include="image\msi\msi11\msi5.png" />
+    <Content Include="image\msi\msi12\msi1.png" />
+    <Content Include="image\msi\msi12\msi2.png" />
+    <Content Include="image\msi\msi12\msi3.png" />
+    <Content Include="image\msi\msi12\msi4.png" />
+    <Content Include="image\msi\msi12\msi5.png" />
+    <Content Include="image\msi\msi13\msi1.png" />
+    <Content Include="image\msi\msi13\msi2.png" />
+    <Content Include="image\msi\msi13\msi3.png" />
+    <Content Include="image\msi\msi13\msi4.png" />
+    <Content Include="image\msi\msi13\msi5.png" />
+    <Content Include="image\msi\msi14\msi1.png" />
+    <Content Include="image\msi\msi14\msi2.png" />
+    <Content Include="image\msi\msi14\msi3.png" />
+    <Content Include="image\msi\msi14\msi4.png" />
+    <Content Include="image\msi\msi14\msi5.png" />
+    <Content Include="image\msi\msi15\msi1.png" />
+    <Content Include="image\msi\msi15\msi2.png" />
+    <Content Include="image\msi\msi15\msi3.png" />
+    <Content Include="image\msi\msi15\msi4.png" />
+    <Content Include="image\msi\msi15\msi5.png" />
+    <Content Include="image\msi\msi16\msi1.png" />
+    <Content Include="image\msi\msi16\msi2.png" />
+    <Content Include="image\msi\msi16\msi3.png" />
+    <Content Include="image\msi\msi16\msi4.png" />
+    <Content Include="image\msi\msi16\msi5.png" />
+    <Content Include="image\msi\msi17\msi1.png" />
+    <Content Include="image\msi\msi17\msi2.png" />
+    <Content Include="image\msi\msi17\msi3.png" />
+    <Content Include="image\msi\msi17\msi4.png" />
+    <Content Include="image\msi\msi17\msi5.png" />
+    <Content Include="image\msi\msi18\msi1.png" />
+    <Content Include="image\msi\msi18\msi2.png" />
+    <Content Include="image\msi\msi18\msi3.png" />
+    <Content Include="image\msi\msi18\msi4.png" />
+    <Content Include="image\msi\msi18\msi5.png" />
+    <Content Include="image\msi\msi19\msi1.png" />
+    <Content Include="image\msi\msi19\msi2.png" />
+    <Content Include="image\msi\msi19\msi3.png" />
+    <Content Include="image\msi\msi19\msi4.png" />
+    <Content Include="image\msi\msi19\msi5.png" />
+    <Content Include="image\msi\msi1\msi1.png" />
+    <Content Include="image\msi\msi1\msi2.png" />
+    <Content Include="image\msi\msi1\msi3.png" />
+    <Content Include="image\msi\msi1\msi4.png" />
+    <Content Include="image\msi\msi1\msi5.png" />
+    <Content Include="image\msi\msi20\msi1.png" />
+    <Content Include="image\msi\msi20\msi2.png" />
+    <Content Include="image\msi\msi20\msi3.png" />
+    <Content Include="image\msi\msi20\msi4.png" />
+    <Content Include="image\msi\msi20\msi5.png" />
+    <Content Include="image\msi\msi21\msi1.png" />
+    <Content Include="image\msi\msi21\msi2.png" />
+    <Content Include="image\msi\msi21\msi3.png" />
+    <Content Include="image\msi\msi21\msi4.png" />
+    <Content Include="image\msi\msi21\msi5.png" />
+    <Content Include="image\msi\msi22\msi1.png" />
+    <Content Include="image\msi\msi22\msi2.png" />
+    <Content Include="image\msi\msi22\msi3.png" />
+    <Content Include="image\msi\msi22\msi4.png" />
+    <Content Include="image\msi\msi22\msi5.png" />
+    <Content Include="image\msi\msi23\msi1.png" />
+    <Content Include="image\msi\msi23\msi2.png" />
+    <Content Include="image\msi\msi23\msi3.png" />
+    <Content Include="image\msi\msi23\msi4.png" />
+    <Content Include="image\msi\msi23\msi5.png" />
+    <Content Include="image\msi\msi24\msi1.png" />
+    <Content Include="image\msi\msi24\msi2.png" />
+    <Content Include="image\msi\msi24\msi3.png" />
+    <Content Include="image\msi\msi25\msi1.png" />
+    <Content Include="image\msi\msi25\msi2.png" />
+    <Content Include="image\msi\msi25\msi3.png" />
+    <Content Include="image\msi\msi25\msi4.png" />
+    <Content Include="image\msi\msi25\msi5.png" />
+    <Content Include="image\msi\msi2\msi1.png" />
+    <Content Include="image\msi\msi2\msi2.png" />
+    <Content Include="image\msi\msi2\msi3.png" />
+    <Content Include="image\msi\msi2\msi4.png" />
+    <Content Include="image\msi\msi2\msi5.png" />
+    <Content Include="image\msi\msi3\msi1.png" />
+    <Content Include="image\msi\msi3\msi2.png" />
+    <Content Include="image\msi\msi3\msi3.png" />
+    <Content Include="image\msi\msi3\msi4.png" />
+    <Content Include="image\msi\msi3\msi5.png" />
+    <Content Include="image\msi\msi4\msi1.png" />
+    <Content Include="image\msi\msi4\msi2.png" />
+    <Content Include="image\msi\msi4\msi3.png" />
+    <Content Include="image\msi\msi4\msi4.png" />
+    <Content Include="image\msi\msi4\msi5.png" />
+    <Content Include="image\msi\msi5\msi1.png" />
+    <Content Include="image\msi\msi5\msi2.png" />
+    <Content Include="image\msi\msi5\msi3.png" />
+    <Content Include="image\msi\msi5\msi4.png" />
+    <Content Include="image\msi\msi5\msi5.png" />
+    <Content Include="image\msi\msi6\msi1.png" />
+    <Content Include="image\msi\msi6\msi2.png" />
+    <Content Include="image\msi\msi6\msi3.png" />
+    <Content Include="image\msi\msi6\msi4.png" />
+    <Content Include="image\msi\msi6\msi5.png" />
+    <Content Include="image\msi\msi7\msi1.png" />
+    <Content Include="image\msi\msi7\msi2.png" />
+    <Content Include="image\msi\msi7\msi3.png" />
+    <Content Include="image\msi\msi7\msi4.png" />
+    <Content Include="image\msi\msi7\msi5.png" />
+    <Content Include="image\msi\msi8\msi1.png" />
+    <Content Include="image\msi\msi8\msi2.png" />
+    <Content Include="image\msi\msi8\msi3.png" />
+    <Content Include="image\msi\msi8\msi4.png" />
+    <Content Include="image\msi\msi8\msi5.png" />
+    <Content Include="image\msi\msi9\msi1.png" />
+    <Content Include="image\msi\msi9\msi2.png" />
+    <Content Include="image\msi\msi9\msi3.png" />
+    <Content Include="image\msi\msi9\msi4.png" />
+    <Content Include="image\not found\no-products-found.png" />
+    <Content Include="image\poster\acer\acer.png" />
+    <Content Include="image\poster\asus\asus.png" />
+    <Content Include="image\poster\asus\asus1.png" />
+    <Content Include="image\poster\dell\dell.png" />
+    <Content Include="image\poster\gigabyte\gigabyte.png" />
+    <Content Include="image\poster\hp\hp.png" />
+    <Content Include="image\poster\microsoft\microsoft.png" />
+    <Content Include="image\poster\msi\msi.png" />
+    <Content Include="image\slider\Slider-image1.jpg" />
+    <Content Include="image\slider\Slider-image2.jpg" />
+    <Content Include="image\slider\Slider-image3.jpg" />
+    <Content Include="image\slider\Slider-image4.jpg" />
+    <Content Include="image\slider\Slider-image5.jpg" />
+    <Content Include="image\Tutorial\tutorial-fogot.png" />
+    <Content Include="image\Tutorial\tutorial-login.png" />
+    <Content Include="image\Tutorial\tutorial-register.png" />
+    <Content Include="image\Tutorial\tutorial1.png" />
+    <Content Include="image\Tutorial\tutorial2.png" />
+    <Content Include="image\Tutorial\tutorial3.png" />
+    <Content Include="image\Tutorial\tutorial4.png" />
+    <Content Include="image\Tutorial\tutorial5.png" />
+    <Content Include="image\Tutorial\tutorial6.png" />
+    <Content Include="Scripts\BackToTop.js" />
+    <Content Include="Scripts\bstable.js" />
+    <Content Include="Scripts\CartAtHover.js" />
+    <Content Include="Scripts\click-filter.js" />
+    <Content Include="Scripts\clickAddCart.js" />
+    <Content Include="Scripts\hover-product.js" />
+    <Content Include="Scripts\nav-responsive.js" />
+    <Content Include="Scripts\product-bestseller.js" />
+    <Content Include="Scripts\register.js" />
+    <Content Include="Scripts\ripple-button.js" />
+    <Content Include="Scripts\Scroll-Indicator.js" />
+    <Content Include="Scripts\slick-all-product.js" />
+    <Content Include="Scripts\slider.js" />
+    <Content Include="Scripts\tabs-table.js" />
+    <Content Include="Scripts\tabs.js" />
+    <Content Include="Scripts\view-image-product.js" />
+    <Content Include="Scripts\visibleCart.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44365/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

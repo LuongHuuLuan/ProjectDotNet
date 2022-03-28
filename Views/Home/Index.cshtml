@@ -1,0 +1,236 @@
+﻿@model IEnumerable<ProjectDotNet.Models.LaptopInfo>
+<div id="slider">
+
+    <div class="slider-image" style="background-image: url('/image/slider/Slider-image1.jpg')"></div>
+    <div class="slider-image" style="background-image: url('/image/slider/Slider-image2.jpg')"></div>
+    <div class="slider-image" style="background-image: url('/image/slider/Slider-image3.jpg')"></div>
+    <div class="slider-image" style="background-image: url('/image/slider/Slider-image4.jpg')"></div>
+    <div class="slider-image" style="background-image: url('/image/slider/Slider-image5.jpg')"></div>
+    <button class="btn-slider previous"><i class="fas fa-chevron-left"></i></button>
+    <button class="btn-slider  next"><i class="fas fa-chevron-right"></i></button>
+    <div class="slider-element">
+        <div class="slider-items slider-left"></div>
+        <div class="slider-items slider-center"></div>
+        <div class="slider-items slider-right"></div>
+    </div>
+</div>
+<div id="content">
+    <div class="outstanding-brand">
+        <div class="outstading-brand-main">
+            <div class="title-outstanding">
+                <div class="border-outstanding"></div>
+                <div class="title-main">Thương hiệu nổi bật</div>
+            </div>
+
+            <div class="outstand-product">
+                @*load thuong hieu noi bat*@
+                @foreach (String hang in @ViewBag.dsHang)
+                {
+                <div class="outstand-product-items">
+                    <a class="click-css" href="">
+                        <div class="img-outstand outstand1">
+                        </div>
+                    </a>
+                    <div class="title-outstand">@hang</div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        @*load thuong hieu san pham*@
+        @foreach (var hangSX in @ViewBag.dsHang)
+        {
+        <div class="product-biggest">
+            <div class="product-item-big">
+                <div class="title-product">
+                    <div class="border-product"></div>
+                    @*ten thuong hieu*@
+                    @*<div class="title-main-product">DELL (Don't go there. Go to Dell.)</div>*@
+                    <div class="title-main-product">@hangSX</div>
+                    <a class="view-all" href="html/all-product.html">
+                        Xem tất cả <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="product-cover">
+                    <div style="overflow: hidden; border-radius: 0 0 0 10px">
+                        @*anh dai dien cho selling*@
+                        <a class="product-hover-selling" href="">
+                            <div class="product-selling"
+                                 @*link anh*@
+                                 @{String linkHang = "/image/poster/"+hangSX+"/"+hangSX+".png";}
+                                 style="background-image: url(@linkHang)"></div>
+                        </a>
+                    </div>
+
+                    <div class="product-item-cover">
+                        @foreach (var laptop in Model)
+                            {
+                                int i = 0;
+                                if (laptop.HANG.Equals(hangSX))
+                                {
+                        @*duong dan den trang product cu the*@
+                        <a class="product-hover-items" href="html/product-page.html">
+                            <div class="product-items  border-item-top1">
+                                @*ten san pham*@
+                                <div class="title-product-item">
+                                    @laptop.TENLAPTOP
+                                </div>
+                                @*gia*@
+                                <div class="slogan-item">
+                                    @laptop.GIABAN VND
+                                </div>
+                                @*anh san pham*@
+                                <div class="img-product-item"
+                                     style="background-image: url('image/dell/dell1/dell1.png')">
+
+                                </div>
+                            </div>
+                        </a>
+                                    i++;
+                                    if (i == 4)
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    @*san pham ban chay*@
+    @*<div class="bestseller">
+            <div class="bestseller-main">
+                <div class="title-bestseller">
+                    <div class="border-bestseller"></div>
+                    <div class="title-main-bestseller">Bán chạy nhất</div>
+                    <a class="view-all-bestseller" href="">Xem tất cả <i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="product-bestseller">
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/gigabyte/gigabyte/unnamed (5).png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                    <a class="click-action" href="">
+                        <div class="product-bestseller-items">
+                            <div class="img-product-bestseller" style="background-image: url('image/img_11.png')"></div>
+                            <div class="product-bestseller-name">
+                                <div class="product-name">Đế tản nhiệt Laptop DEEPCOOL Windpal Mini</div>
+                                <div class="product-status">Còn 1 sản phẩm</div>
+                            </div>
+                            <div class="product-price">228.000 ₫</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>*@
+</div>
